@@ -10,6 +10,9 @@ module.exports = {
       '3/4': '75%',
       'full': '100%',
     },
+    fontFamily: {
+      'open': 'Open Sans Condensed',
+    },
   },
   variants: {
     extend: {},
