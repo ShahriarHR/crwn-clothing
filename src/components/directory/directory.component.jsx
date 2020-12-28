@@ -7,8 +7,8 @@ const Directory = () => {
 
     return (
         <div className="w-full md:max-w-7xl md:flex md:flex-wrap md:justify-between">
-            {images.map(({ title, imageUrl, id, size}) => (
-                <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+            {images.map(({ id, ...otherSectionProps}) => (
+                <MenuItem key={id} {...otherSectionProps} />
             ))}
         </div>
     )

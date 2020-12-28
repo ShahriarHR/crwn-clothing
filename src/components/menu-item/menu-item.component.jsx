@@ -1,6 +1,7 @@
 import './menu-item.css';
+import {withRouter} from 'react-router-dom';
 
-const MenuItem = ({ title, imageUrl, size }) => {
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
     let height;
     if(size === "large") {
         height = "md:h-80 h-60"
@@ -8,7 +9,10 @@ const MenuItem = ({ title, imageUrl, size }) => {
         height = "h-60"
     }
     return (
-        <div className={`${height} menu my-2 min-w-1/3 flex-auto flex justify-center items-center border border-black ml-2 mr-4 first:mr-2 last:ml-2 overflow-hidden`}>
+        <div 
+            onClick={() => history.push(`${match.url}${linkUrl}`)}
+            className={`${height} menu my-2 min-w-1/3 flex-auto flex justify-center items-center border border-black ml-2 mr-4 first:mr-2 last:ml-2 overflow-hidden`}
+        >
             <div  
                 className="w-full h-full bg-center bg-cover custom"
                 style={{backgroundImage: `url(${imageUrl})`}}
@@ -21,4 +25,4 @@ const MenuItem = ({ title, imageUrl, size }) => {
     )
 }
 
-export default MenuItem;
+export default withRouter(MenuItem);
