@@ -1,6 +1,10 @@
 import {Route, Switch} from 'react-router-dom';
+
+
+import Header from './components/header/header.component';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shoppage/shoppage.component';
+
 
 import './App.css';
 
@@ -43,6 +47,7 @@ const MensDetailsPage = (props) => {
 function App() {
   return (
     <div className="font-open">
+      <Header />
       <Switch> 
         <Route exact path='/' component={HomePage} />
         <Route exact path='/shop' component={ShopPage} />
